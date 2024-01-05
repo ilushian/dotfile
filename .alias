@@ -1,0 +1,5 @@
+alias create="$HOME/.config/script/create-project-react.sh"
+alias start="npm start; dotnet run"
+alias disk="df -h / ; df"
+
+

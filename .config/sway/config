@@ -1,0 +1,53 @@
+exec env RUST_BACKTRACE=1 RUST_LOG=swayr=debug swayrd > /tmp/swayrd.log 2>&1
+
+
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+include $HOME/.config/sway/keymaping.config
+include $HOME/.config/sway/color.config
+include $HOME/.config/sway/for_window.config
+include $HOME/.config/sway/animation.config
+
+exec /usr/lib/polkit-kde-authentication-agent-1
+exec .config/sway/scripts/autosettingsway.sh
+exec fcitx5
+exec nm-applet --indicator
+exec blueman-applet
+exec dunst
+exec wl-paste --type text --watch cliphist store #Stores only text data
+exec wl-paste --type image --watch cliphist store #Stores only image data
+exec weye
+exec swww query || swww init
+exec_always picom --config ~/config/picom/picom.config
+# exec /home/aly/.config/sway/scripts/wallpaper.sh
+### Variables
+bar {
+    swaybar_command waybar
+}
+# include /etc/sway/config.d/*
+exec picom -o blur:enable
+
+#input 
+input "type:keyboard" {           
+        xkb_layout us
+        tap enabled
+        xkb_options caps:enabled
+        xkb_numlock enabled
+    }
+
+input "type:touchpad" {
+    dwt enabled
+    tap enabled
+    middle_emulation enabled
+}
+xwayland enable
+
+focus_wrapping yes
+corner_radius 10
+shadow_blur_radius 12
+shadows enable 
+shadow_color #6aa6a5
+
+bindsym $mod+Next        exec swayr next-window all-workspaces
+
+
+focus_follows_mouse no

@@ -1,0 +1,80 @@
+// Config //
+configuration {
+    show-icons:                  true;
+    font:                        "JetBrainsMono Nerd Font 10";
+}
+
+
+
+// Main //
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    width:                       100%;
+    transparency:                "real";
+    cursor:                      "default";
+    spacing:                     0px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               0px;
+    border-color:                transparent;
+    background-color:            transparent;
+}
+mainbox {
+    enabled:                     true;
+    children:                    [ "listview" ];
+    background-color:            #CCCCFF;
+}
+
+
+// Lists //
+listview {
+    enabled:                     true;
+    columns:                     3;
+    lines:                       1;
+    spacing:                     50px;
+    padding:                     50px 60px 50px 60px;
+    cycle:                       true;
+    dynamic:                     false;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     true;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  #cdd6f4ff;
+}
+
+
+// Elements //
+element {
+    enabled:                     true;
+    orientation:                 vertical;
+    spacing:                     0px;
+    padding:                     10px;
+    border-radius:               40px;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  #cdd6f4ff;
+}
+
+element selected.normal {
+    background-color:            #b4befeff;
+    text-color:                  #11111bff;
+}
+element-icon {
+    size:                        50%;
+    cursor:                      inherit;
+    border-radius:               35px;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element-text {
+    vertical-align:               0.9;
+    horizontal-align:             0.5;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+

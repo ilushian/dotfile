@@ -1,0 +1,1 @@
+swaymsg gaps outer all set 0 && swaymsg gaps inner all set 5 
