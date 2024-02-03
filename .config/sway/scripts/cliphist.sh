@@ -1,1 +1,0 @@
-cliphist list | rofi -dmenu -no-lazy-grab -p "mode-switcher" -theme $HOME/.config/rofi/launchers/type-5/style-3.rasi | cliphist decode | wl-copy 
