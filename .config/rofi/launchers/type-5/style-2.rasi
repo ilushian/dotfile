@@ -41,7 +41,8 @@ window {
     padding:                     0px;
     border-radius:               12px;
     cursor:                      "default";
-    background-image:            url("~/.config/rofi/images/gradient.png", width);
+    background-image:            url("/home/aly/.wallpapers/wallmenu", width);
+
 }
 
 /*****----- Main Box -----*****/
@@ -73,7 +74,7 @@ entry {
     background-color:            transparent;
     text-color:                  gray;
     cursor:                      text;
-    placeholder:                 "Type to filter";
+    placeholder:                 "Search";
     placeholder-color:           inherit;
     vertical-align:              0.5;
     horizontal-align:            0.5;

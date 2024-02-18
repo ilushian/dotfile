@@ -43,6 +43,8 @@ window {
     fullscreen:                  true;
     cursor:                      "default";
     background-color:            var(background-window);
+    background-image:            url()
+    
 }
 
 /*****----- Main Box -----*****/

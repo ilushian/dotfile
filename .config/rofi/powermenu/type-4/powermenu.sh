@@ -11,7 +11,7 @@
 
 # Current Theme
 dir="$HOME/.config/rofi/powermenu/type-4"
-theme='style-5'
+theme='style-2'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
@@ -49,7 +49,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$lock\n$logout\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Execute Command
@@ -60,20 +60,8 @@ run_cmd() {
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
-		elif [[ $1 == '--suspend' ]]; then
-			mpc -q pause
-			amixer set Master mute
-			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
-				openbox --exit
-			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
-				bspc quit
-			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
-				i3-msg exit
-			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
-				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
-			fi
+			pkill -U $USER
 		fi
 	else
 		exit 0

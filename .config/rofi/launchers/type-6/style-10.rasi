@@ -45,7 +45,8 @@ window {
     enabled:                     true;
     border-radius:               15px;
     cursor:                      "default";
-    background-color:            @background;
+    background-image:            url("/home/aly/.wallpapers/desktop/Yae.Miko.full.3968183.jpg", width);
+
 }
 
 /*****----- Main Box -----*****/
